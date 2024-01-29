@@ -14,13 +14,16 @@
           />
         )
       }
-      function Header() {
-        return (<h1>React: Develop. Preview. Ship.</h1>);
+      function Header({title, altText}) {
+        console.log(title);
+        console.log(altText);
+        return (<h1 alt={altText}>{title}</h1>);
       }
       function Homepage() {
         return (
           <div>
-            <Header/>
+            <Header title="Reaction" altText="React Title"/>
+            <Header title="Next would be NextJS" />
             <Profile/>
           </div>
         );
