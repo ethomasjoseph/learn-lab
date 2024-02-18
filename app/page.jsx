@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import LikeButton from "./like-button";
+
 function Profile() {
   return (
     <img
@@ -14,22 +15,17 @@ function Header({title, altText}) {
 }
 export default function Homepage() {
   const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
-  const [likes, setLikes] = useState(0);
-  function handleLike(e) {
-    console.log('increment like count = ', e);
-    setLikes(likes + 1);
-  }
+
   return (
     <div>
-      <Header title="Reaction" altText="React Title"/>
-      <Header title="Next would be NextJS" />
+      <Header title="NextJS has arrived!" />
       <ul>
         {names.map( (name) => (
           <li key={name}>{name}</li>
         ))}
       </ul>
       <Profile/>
-      <button onClick={handleLike}>Like ({likes})</button>
+      <LikeButton />
     </div>
   );
 }
